@@ -18,6 +18,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+// Alla on lab3 kaikki tehtävät. t1 ja t2 on taas sulautettu yhteen siten että json data haetaan volley kirjaston avulla (hmtl datan sijaan, mutta toiminta on täysin sama).
+// Koronadata tehtävä on myös tehty ja toiminta vaihdetaan vain kommentoimalla/poistamalla kommentti onCreate funktiossa
 public class MainActivity extends AppCompatActivity {
 
     ListView listView;
@@ -38,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,list);
         listView.setAdapter(adapter);
 
-        //getDatJson("https://api.football-data.org/v2/competitions?areas=2072");  // T2 kutsumisfunktio
-        getDatCoronaData();  // T3 kutsumisFunktio
+        getDatJson("https://api.football-data.org/v2/competitions?areas=2072");  // T2 kutsumisfunktio
+        //getDatCoronaData();  // T3 kutsumisFunktio
 
 
     }
@@ -95,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    // Lisätehtävä 3
     public void getDatCoronaData(){
         list.clear();
 
